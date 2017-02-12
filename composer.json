@@ -12,13 +12,20 @@
   ],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/PreventHIVOK/drupal-phok_glossary",
-  "prefer-stable": true,
-  "minimum-stability": "dev",
   "support": {
     "issues": "https://github.com/PreventHIVOK/drupal-phok_glossary/issues",
     "source": "https://github.com/PreventHIVOK/drupal-phok_glossary"
   },
   "require": {
-    "drupal/core": "~8.0"
-  }
+    "drupal/core": "~8.2"
+  },
+  "require-dev": {
+    "mikey179/vfsStream": "~1",
+    "phpunit/phpunit": "~4"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
