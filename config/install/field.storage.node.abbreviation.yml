@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.abbreviation
+field_name: abbreviation
+entity_type: node
+type: string
+settings:
+  max_length: 16
+  is_ascii: false
+  case_sensitive: true
+module: core
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

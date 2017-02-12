@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * Contains phok_glossary.module.
+ *
+ * @TODO Explain this file better before considering the module "done".
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @TODO Add helpful information here. Perhaps include the README.md file and
+ *     process the Markdown when a parser is available (e.g., markdown_filter).
+ */
+function phok_glossary_help($route_name, RouteMatchInterface $route_match) {
+  try {
+    switch ($route_name) {
+      // Main module help for the phok_glossary_abbr module.
+      case 'help.page.phok_glossary_abbr':
+        $output = '';
+        $output .= '<h3>' . t('About') . '</h3>';
+        $output .= '<p>' . t('Adds the necessary fields and prehooks to make abbrevations appear next to the term.') . '</p>';
+        return $output;
+
+      default:
+        break;
+    }
+  } catch (\Throwable $t) {
+    throw $t;
+  } catch (\Exception $e) {
+    throw $e;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @TODO Figure out how this hook works.
+ */
+function phok_glossary_theme() {
+  return [
+    'phok_glossary' => [
+      'template' => 'phok_glossary',
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Removes the label field from the glossary term add and edit pages. An extra
+ *    field was added to the node to hold the term. This allows conditional
+ *    setting of the label based on whether a term has an abbrevation.
+ *
+ * @internal Duplicate data is generally bad practice. This was considered, but
+ *    disregarded. It is much quicker to get the desired results and requires
+ *    hooking into Drupal in fewer places.
+ *
+ * @internal The hooks should be learned so that we may acieve the desired
+ *     effect without the required data duplication.
+ *
+ * @TODO Test more, then remove commented code.
+ * @TODO Write unit tests and web tests.
+ */
+function phok_glossary_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  //vardumper($form_id);
+  try {
+    switch ($form_id) {
+      case 'node_glossary_term_form':
+      case 'node_glossary_term_edit_form':
+        $title_widget = &$form['title']['widget'][0];
+        //$title_default = $title_widget['value']['#default_value'];
+        //$title_default = ( !empty($title_default) ) ?: "%TermPlaceholder%";
+        //$title_widget['value']['#default_value'] = $title_default;
+        //$title_widget['value']['#type'] = 'value';
+        $title_widget['value']['#required'] = FALSE;
+        $form['title']['#access'] = FALSE;
+        break;
+
+      default:
+        break;
+    }
+  } catch (\Throwable $t) {
+    throw $t;
+  } catch (\Exception $e) {
+    throw $e;
+  }
+}
+
+/**
+ * Implements hook_node_presave
+ *
+ * Checks for the presence of an abbreviation. If found, it creates a title
+ *    using both it and the term; otherwise, it just uses the term title.
+ *
+ * @internal The decision to duplicate data was considered but disregarded. It
+ *    it is much quicker to get the desired results and requires hooking into
+ *    Drupal in fewer places.
+ *
+ * @TODO Use the php code below code and figure out how to add
+ *    semantic information to the page output. It may be hook_block_alter()
+ *    or something to that effect.
+ *
+ * `$abbr = '<abbr title="' . $term . '">' . $node->field_abbreviation->getString() . '</abbr>'`;
+ */
+function phok_glossary_node_presave(EntityInterface $node) {
+
+  try {
+    switch ($node->getType()) {
+      case 'glossary_term':
+        //vardumper($node);
+        if ($node->hasField('field_abbreviation') && !empty($node->field_abbreviation)) {
+          $term = $node->field_term->getString();
+          $abbr = $node->field_abbreviation->getString();
+          $title = "$term ($abbr)";
+        } else {
+          $title = $node->field_term->getString();
+        }
+        $node->setTitle($title);
+        break;
+
+      default:
+        break;
+    }
+  } catch (\Throwable $t) {
+    throw $t;
+  } catch (\Exception $e) {
+    throw $e;
+  }
+}

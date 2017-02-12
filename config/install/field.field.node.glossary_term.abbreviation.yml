@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.abbreviation
+    - node.type.glossary_term
+id: node.glossary_term.abbreviation
+field_name: abbreviation
+entity_type: node
+bundle: glossary_term
+label: Abbreviation
+description: "Most commonly used shortened form of the term.<br>\r\n<small>Use the internationally recognized form (e.g., STI, not STD).</small>"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

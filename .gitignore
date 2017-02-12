@@ -1,0 +1,11 @@
+# Composer files
+vendor/*
+
+# NodeJS files
+node_modules/*
+
+# Bower files
+bower_components/*
+
+# Binary files
+bin/*

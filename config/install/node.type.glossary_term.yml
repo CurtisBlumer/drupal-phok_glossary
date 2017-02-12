@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Glossary term'
+type: glossary_term
+description: 'Create a <em>glossary term</em> to define a word, compound word, or multi-word expression that may not be generally understood.'
+help: 'Glossary terms are primarily used as a reference to help contributors explain complex topics without having to define every term on multiple pages. Visitors may also browse and search all terms.'
+new_revision: true
+preview_mode: 1
+display_submitted: true

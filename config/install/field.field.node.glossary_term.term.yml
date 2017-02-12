@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.term
+    - node.type.glossary_term
+id: node.glossary_term.term
+field_name: term
+entity_type: node
+bundle: glossary_term
+label: Term
+description: 'Enter the word, compound word, or multi-word expression that may not be well understood.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
