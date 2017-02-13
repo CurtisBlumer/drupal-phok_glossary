@@ -4,14 +4,19 @@ dependencies:
   config:
     - field.storage.node.related_term
     - node.type.glossary_term
+  module:
+    - node
+  enforced:
+    module:
+      - phok_glossary
 id: node.glossary_term.related_term
 field_name: related_term
 entity_type: node
 bundle: glossary_term
-label: 'Related terms'
+label: 'Related term'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

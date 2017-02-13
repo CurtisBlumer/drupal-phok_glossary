@@ -8,10 +8,10 @@ id: node.glossary_term.comment
 field_name: comment
 entity_type: node
 bundle: glossary_term
-label: Comments
+label: Comment
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     status: 2

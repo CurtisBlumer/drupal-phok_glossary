@@ -6,8 +6,8 @@ dependencies:
   enforced:
     module:
       - phok_glossary
-id: node.synonyms
-field_name: synonyms
+id: node.synonym
+field_name: synonym
 entity_type: node
 type: string
 settings:
