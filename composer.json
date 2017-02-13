@@ -2,7 +2,6 @@
   "name": "drupal/phok_glossary",
   "type": "drupal-module",
   "description": "Glossary module for PHOK Platform",
-  "version": "1.x-dev",
   "keywords": [
     "Drupal 8",
     "glossary",
@@ -16,20 +15,12 @@
     "issues": "https://github.com/PreventHIVOK/drupal-phok_glossary/issues",
     "source": "https://github.com/PreventHIVOK/drupal-phok_glossary"
   },
-  "require": {
-    "drupal/core": "~8.2"
-  },
   "require-dev": {
     "mikey179/vfsStream": "~1",
     "phpunit/phpunit": "~4"
   },
   "config": {
     "preferred-install": "dist"
-  },
-  "extra":{
-    "branch-alias": {
-      "develop": "1.0.x-dev"
-    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true
