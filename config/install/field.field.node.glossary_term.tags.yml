@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.tags
+    - node.type.glossary_term
+    - taxonomy.vocabulary.tags
+id: node.glossary_term.tags
+field_name: tags
+entity_type: node
+bundle: glossary_term
+label: Tags
+description: "Aids visitors in finding information on specific topics.<br>\r\n<small>Enter up to 10 tags, separated by a comma (\",\").</small>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

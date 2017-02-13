@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.synonym
+    - node.type.glossary_term
+id: node.glossary_term.synonym
+field_name: synonym
+entity_type: node
+bundle: glossary_term
+label: Synonym
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
