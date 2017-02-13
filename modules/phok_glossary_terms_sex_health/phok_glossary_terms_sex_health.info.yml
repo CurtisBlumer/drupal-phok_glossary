@@ -1,0 +1,10 @@
+name: Glossary import: Sexual health terms
+type: module
+description: Imports terms related to sexual health into your glossary.
+core: 8.x
+package: PHOK Platform
+dependencies:
+  - phok_glossary:phok_glossary
+  - migrate_source_csv:migrate_source_csv
+  - migrate_plus:migrate_plus (>= 3.0-beta1)
+  - migrate_tools:migrate_tools (>= 3.0-beta1)

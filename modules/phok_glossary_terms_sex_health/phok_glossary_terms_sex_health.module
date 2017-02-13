@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains phok_glossary_terms_sex_health.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function phok_glossary_terms_sex_health_migration_plugins_alter(&$definitions) {
+  $definitions['phok_glossary_terms_sex_health']['source']['path'] = drupal_get_path('module', 'phok_glossary_terms_sex_health') . $definitions['phok_glossary_terms_sex_health']['source']['path'];
+}
+
+/**
+ * Implements hook_help().
+ */
+function phok_glossary_terms_sex_health_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the phok_glossary_terms_sex_health module.
+    case 'help.page.phok_glossary_terms_sex_health':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Imports terms related to sexual health into your glossary.') . '</p>';
+      return $output;
+
+    default:
+      break;
+  }
+}
