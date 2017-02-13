@@ -1,6 +1,6 @@
 {
   "name": "drupal/phok_glossary",
-  "type": "drupal-custom-module",
+  "type": "drupal-module",
   "description": "Glossary module for PHOK Platform",
   "version": "1.x-dev",
   "keywords": [
