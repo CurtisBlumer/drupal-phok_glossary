@@ -49,7 +49,7 @@ source:
       uuid: UUID
 process:
   # The content (node) type we are creating is 'glossary_term'.
-  type:
+  node_type:
     plugin: default_value
     default_value: glossary_term
   # Most fields can be mapped directly - we just specify the destination (D8)
@@ -58,15 +58,15 @@ process:
   title: term
   term: term
   abbreviation: abbreviation
-  synonym: synonym
-  related_terms:
-    source: glossary_term
-    plugin: entity_generate
-    value_key: term
-    bundle_key: nid
-    bundle: glossary_term
-    entity_type: node
-    ignore_case: true
+  # synonym: synonym
+  # related_term:
+  #   source: glossary_term
+  #   plugin: entity_generate
+  #   value_key: term
+  #   bundle_key: nid
+  #   bundle: glossary_term
+  #   entity_type: node
+  #   ignore_case: true
   definition: definition
 #  images: images
 destination:
