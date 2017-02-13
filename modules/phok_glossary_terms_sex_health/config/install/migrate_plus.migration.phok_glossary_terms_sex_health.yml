@@ -32,15 +32,15 @@ source:
   # below. The value is a user-friendly string for display by the migration UI.
   column_names:
     0:
-      term: Term
+      term_i: Term
     1:
-      abbreviation: Abbreviation
+      abbr_i: Abbreviation
     2:
-      synonym: Synonyms
-    3:
-      related_term: Related terms
+      synonym_i: Synonyms
+#    3:
+#      related_i: Related terms
     4:
-      definition: Definition
+      def_i: Definition
 #    5:
 #      audience: Glossary
 #    6:
@@ -55,9 +55,9 @@ process:
   # Most fields can be mapped directly - we just specify the destination (D8)
   # field and the corresponding field name from above, and the values will be
   # copied in.
-  title: term
-  term: term
-  abbreviation: abbreviation
+#  title: term_i
+  term: term_i
+  abbreviation: abbr_i
   # synonym: synonym
   # related_term:
   #   source: glossary_term
@@ -67,7 +67,7 @@ process:
   #   bundle: glossary_term
   #   entity_type: node
   #   ignore_case: true
-  definition: definition
+  definition: def_i
 #  images: images
 destination:
   # Each row of data (line from the CSV file) will be used to create a node.
