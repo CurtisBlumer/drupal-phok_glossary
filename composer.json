@@ -17,7 +17,7 @@
   },
   "require": {
       "drupal/core": "~8.2",
-      "drupal/phok_core": "~1.0",
+      "drupal/phok_core": "dev-master",
       "drupal/better_formats": "1.*@dev",
       "drupal/metatag": "~1.0",
       "drupal/pathauto": "~1.0"
@@ -28,6 +28,11 @@
   },
   "config": {
     "preferred-install": "dist"
+  },
+  "extra": {
+      "branch-alias": {
+          "dev-master": "1.0.x-dev"
+      }
   },
   "minimum-stability": "dev",
   "prefer-stable": true
