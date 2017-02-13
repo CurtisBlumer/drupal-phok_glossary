@@ -4,6 +4,9 @@ dependencies:
   module:
     - node
     - text
+  enforced:
+    module:
+      - phok_glossary
 id: node.term
 field_name: term
 entity_type: node

@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies:
-name: Glossaries
-vid: glossaries
-description: 'Glossary terms may be assigned to 0 or more glossaries. These serve to group words for specific audiences.'
-hierarchy: 0
-weight: 0

@@ -4,6 +4,9 @@ dependencies:
   module:
     - node
     - text
+  enforced:
+    module:
+      - phok_glossary
 id: node.abbreviation
 field_name: abbreviation
 entity_type: node

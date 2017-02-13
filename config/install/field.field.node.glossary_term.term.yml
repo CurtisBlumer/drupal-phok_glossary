@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.term
     - node.type.glossary_term
+  module:
+    - text
 id: node.glossary_term.term
 field_name: term
 entity_type: node
